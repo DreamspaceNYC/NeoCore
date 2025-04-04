@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  janus:
+    build: ./services/janus
+    container_name: janus_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./services/janus:/app
+
+  market:
+    build: ./services/market
+    container_name: market_service
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./services/market:/app
+
+  ollama:
+    build: ./services/ollama
+    container_name: ollama_service
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./services/ollama:/app
+
+  video:
+    build: ./services/video
+    container_name: video_service
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./services/video:/app
